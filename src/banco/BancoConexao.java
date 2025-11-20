@@ -7,15 +7,15 @@ import java.sql.SQLException;
 public class BancoConexao {
 
     private static final String
-            URL = "jdbc:postgresql://localhost:5432/clinica-veterinaria";
+            URL = "jdbc:postgresql://localhost:5432/clinica veterinaria";
 
     private static final String
             USER = "postgres";
 
     private static final String
-            PASSWORD = "admin";
+            PASSWORD = "admindb";
 
-    public static void getConexao() {
+    public static Connection getConexao() {
 
         try( Connection conn = DriverManager.getConnection(URL, USER, PASSWORD)) {
             if (conn != null)
@@ -25,5 +25,6 @@ public class BancoConexao {
             System.err.println("Erro ocorrido na Conexão!!");
             throw new RuntimeException(e);
         }
+        return null;
     }
 }
