@@ -18,6 +18,9 @@ public class PropretarioAnimal extends Pessoa{
         this.animais = new ArrayList<>();
     }
 
+    public static void inserirPropietario() {
+    }
+
     public Endereco getEndereco() {
         return endereco;
     }

@@ -27,7 +27,7 @@ public class ProprietarioAnimalDAO {
     }
 
 
-    public void inserir(PropretarioAnimal p) {
+    public void inserirPropietario(PropretarioAnimal p) {
         String sql = "INSERT INTO propietarionome, cpf, telefone, email, rua, bairro, cidade, numero) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             statement = prepararSetenca(sql);
@@ -48,9 +48,14 @@ public class ProprietarioAnimalDAO {
     }
 
 
-    public List<PropretarioAnimal> listar() {
+    public List<PropretarioAnimal> listaPropietario() {
 
-        sql = "SELECT * FROM propietario";
+        sql = "SELECT nome,cpf,t.ddi t.ddd, t.prefixo, t.numero, e.email, ende.rua, " +
+                " ende.bairro, ende.cidade, ende.numero_casa " +
+                "FROM FROM proprietarios p " +
+                "INNER JOIN telefone t ON (p.id = t.id_proprietarios)  " +
+                "INNER JOIN email e ON (p.id = e.id_proprietarios)  " +
+                "INNER JOIN endereco ende ON (p.id = ende.id);";
         List<PropretarioAnimal> lista = new ArrayList<>();
 
         try{
@@ -86,7 +91,7 @@ public class ProprietarioAnimalDAO {
         }
     }
 
-    public void atualizar(PropretarioAnimal p) {
+    public void atualizarPropietario(PropretarioAnimal p) {
         sql = "UPDATE proprietario SET nome=?, telefone=?, email=? WHERE cpf=?";
 
         try {
@@ -104,7 +109,7 @@ public class ProprietarioAnimalDAO {
     }
 
 
-    public void deletar(String cpf) {
+    public void deletarPropietario(String cpf) {
         sql = "DELETE FROM propietario WHERE cpf=?";
 
         try {
