@@ -9,9 +9,9 @@ public class Animal {
     private String raca;
     private Date dataNascimento;
     private double peso;
-    private PropretarioAnimal proprietario;
+    private ProprietarioAnimal proprietario;
 
-    public Animal(String nome, String especie, String raca, Date dataNascimento, double peso, PropretarioAnimal proprietario) {
+    public Animal(String nome, String especie, String raca, Date dataNascimento, double peso, ProprietarioAnimal proprietario) {
         this.nome = nome;
         this.especie = especie;
         this.raca = raca;
@@ -40,7 +40,7 @@ public class Animal {
         return peso;
     }
 
-    public PropretarioAnimal getProprietario() {
+    public ProprietarioAnimal getProprietario() {
         return proprietario;
     }
 }

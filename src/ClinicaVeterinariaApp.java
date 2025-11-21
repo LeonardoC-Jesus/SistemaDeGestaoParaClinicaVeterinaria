@@ -119,17 +119,37 @@ public class ClinicaVeterinariaApp {
     }
 
     private static void inserirPropietario() {
-        System.out.println("Nome:");
+
+        //-----------------Nome---------------
+
+        System.out.println("Informe o seu nome:");
         String nome = scanner.nextLine();
 
-        System.out.println("Telefone:");
-        String telefone = scanner.nextLine();
+        //-----------------Cpf---------------
 
-        System.out.println("Email:");
-        String email = scanner.nextLine();
-
-        System.out.println("CPF:");
+        System.out.println("Informe o seu CPF:");
         String cpf = scanner.nextLine();
+
+        //-----------------Email---------------
+
+        System.out.println("Informe o seu endereço email:");
+        String EnderecoEmail = scanner.nextLine();
+
+        //-------------------Telefone-----------------
+
+        System.out.print("Informe o seu Telefone, ");
+        System.out.println("DDI:");
+        Integer ddi = scanner.nextInt();
+
+        System.out.println("DDD:");
+        Integer ddd = scanner.nextInt();
+
+        System.out.println("Prefixo:");
+        Integer prefixo = scanner.nextInt();
+
+        System.out.println("Numero:");
+        Integer numerotel = scanner.nextInt();
+
 
         //-------------------Endereço-----------------
 
@@ -145,19 +165,16 @@ public class ClinicaVeterinariaApp {
         System.out.println("Número:");
         int numero = Integer.parseInt(scanner.nextLine());
 
+        Email email = new Email(EnderecoEmail);
         Endereco end = new Endereco(rua, bairro, cidade, numero);
-        PropretarioAnimal p = new PropretarioAnimal(nome, telefone, email, cpf, end);
-        PropretarioAnimal PropretarioAnimal = p;
+        Telefone telefone = new Telefone(ddd, ddd, prefixo, numerotel);
+        ProprietarioAnimal p = new ProprietarioAnimal(nome, telefone, email, cpf, end);
+        ProprietarioAnimal ProprietarioAnimal = p;
         propDao.inserirPropietario(p);
         System.out.println("Proprietario nserido com sucesso!!! Cpf: " + p.getCpf());
     }
 
     private static void listarPropietario() {
-        System.out.println("\n--- Proprietários ---");
-        for (PropretarioAnimal p) {
-            System.out.printf("id=%s | nome=%s | tel=%s | email=%%n",
-                    p.getCpf(), p.getNome(), p.getTelefone(), p.getEmail());
-        }
 
     }
 

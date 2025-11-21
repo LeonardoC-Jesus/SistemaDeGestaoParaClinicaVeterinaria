@@ -17,14 +17,13 @@ public class BancoConexao {
 
     public static Connection getConexao() {
 
-        try( Connection conn = DriverManager.getConnection(URL, USER, PASSWORD)) {
-            if (conn != null)
+        try {
+            Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
                 System.out.println("Conexão feita com sucesso!!");
-
+                return conn;
         } catch (SQLException e) {
             System.err.println("Erro ocorrido na Conexão!!");
             throw new RuntimeException(e);
         }
-        return null;
     }
 }

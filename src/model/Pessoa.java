@@ -1,28 +1,28 @@
 package model;
 
-public class Pessoa {
+public class Pessoa  {
     private String nome;
-    private String telefone;
+    private Telefone telefone;
 
-    public Pessoa(String nome, String telefone) {
+    public Pessoa(String nome, Telefone telefone) {
         this.nome = nome;
         this.telefone = telefone;
+    }
+
+    public Pessoa() {
+
     }
 
     public String getNome() {
         return nome;
     }
 
+    public void setTelefone(Telefone telefone) {
+        this.telefone = telefone;
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
     }
 
     public void setId(int anInt) {
